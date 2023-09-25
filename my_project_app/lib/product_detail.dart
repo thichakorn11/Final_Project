@@ -290,7 +290,41 @@ class ProductDetailState extends State<ProductDetail> {
               return null;
             },
           ),
-
+          // const SizedBox(
+          //   height: 10,
+          // ),
+          // // const Text("จำนวน"),
+          // TextFormField(
+          //   controller: _stockController,
+          //   cursorColor: Colors.black,
+          //   style: TextStyle(color: Colors.black.withOpacity(0.9)),
+          //   decoration: InputDecoration(
+          //     prefixIcon: Icon(
+          //       Icons.inventory,
+          //       color: const Color.fromARGB(179, 8, 8, 8),
+          //     ),
+          //     labelText: "จำนวน",
+          //     labelStyle: TextStyle(
+          //         color: const Color.fromARGB(255, 8, 8, 8).withOpacity(0.9)),
+          //     filled: true,
+          //     floatingLabelBehavior: FloatingLabelBehavior.never,
+          //     fillColor: Colors.white.withOpacity(0.8),
+          //     border: OutlineInputBorder(
+          //         borderRadius: BorderRadius.circular(30.0),
+          //         borderSide:
+          //             const BorderSide(width: 0, style: BorderStyle.solid)),
+          //   ),
+          //   keyboardType: TextInputType.number,
+          //   inputFormatters: <TextInputFormatter>[
+          //     FilteringTextInputFormatter.digitsOnly,
+          //   ],
+          //   validator: (value) {
+          //     if (value == null || value.isEmpty) {
+          //       return "กรุณากรอกจำนวนสินค้า";
+          //     }
+          //     return null;
+          //   },
+          // ),
           const SizedBox(
             height: 20,
           ),
