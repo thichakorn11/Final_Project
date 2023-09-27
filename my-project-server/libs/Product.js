@@ -53,6 +53,18 @@ getSumProduct: async (pool) => {
                 + "GROUP BY a.category_id, b.category_name";
 
     return await pool.query(sql);
+},
+
+getByProductDetail: async (pool, productId) => {
+    var sql =  `SELECT * FROM product_variants as pv 
+                INNER JOIN product_size as ps on pv.size_id = ps.size_id
+                INNER JOIN color as clr on pv.color_id = clr.color_id
+                WHERE pv.product_id = ? 
+                ORDER BY ps.size_id ASC`
+                sql = mysql.format(sql, [productId]);
+
+        
+        return await pool.query(sql);
 }
 
 }

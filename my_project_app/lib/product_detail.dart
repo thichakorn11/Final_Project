@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,6 +23,7 @@ class ProductDetail extends StatefulWidget {
 class ProductDetailState extends State<ProductDetail> {
   // Fields
   List<Category> category = [];
+
   int? categoryId; // Make it nullable
 
   final _formKey = GlobalKey<FormState>();
@@ -41,6 +43,8 @@ class ProductDetailState extends State<ProductDetail> {
   }
 
   // API Requests
+  
+
   Future<void> fetchCategory() async {
     final prefs = await SharedPreferences.getInstance();
 
@@ -157,7 +161,7 @@ class ProductDetailState extends State<ProductDetail> {
 
     final json = jsonDecode(response.body);
 
-    print(json["data"][0]);
+    //print(json["data"][0]);
 
     Product product = Product.fromJSON(json["data"][0]);
 

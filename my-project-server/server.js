@@ -275,6 +275,26 @@ app.get("/api/products/:productId", async (req, res) => {
     }
 });
 
+app.get("/api/product_variants/:productId", async (req, res) => {
+    const productId = req.params.productId;
+    console.log("-----------");
+    console.log(result);
+
+    try {
+        var result = await Product.getByProductDetail(pool, productId);
+
+        res.json({
+            result: true,
+            data: result
+        });
+    } catch (ex) {
+        res.json({
+            result: false,
+            message: ex.message
+        });
+    }
+});
+
 app.post("/api/products/update", checkAuth, async (req, res) => {
     const input = req.body;
     console.log(result);
